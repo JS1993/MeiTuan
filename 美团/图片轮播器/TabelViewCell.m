@@ -44,4 +44,18 @@
     }
     return self;
 }
+//从xib被加载之后会自动调用，若使用纯代码，不会被执行
+-(void)awakeFromNib{
+    
+}
+
+//cell被选中或者取消选中时都会被调用
+-(void)setSelected:(BOOL)selected animated:(BOOL)animated{
+    [super setSelected:selected animated:animated];
+    if (selected) {
+        
+    }else{
+        
+    }
+}
 @end
