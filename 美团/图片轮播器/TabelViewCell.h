@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CellModel.h"
 @interface TabelViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageVIew;
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UILabel *price;
 @property (strong, nonatomic) IBOutlet UILabel *buyCount;
+
 @end

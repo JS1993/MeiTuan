@@ -116,13 +116,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CellModel* cellx=self.cells[indexPath.row];
     static NSString* identifier=@"Cell";
     TabelViewCell* cell=[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell==nil) {
+        //通过xib载入
         NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"TabelViewCell" owner:nil options:nil];
         cell = [nibs lastObject];
     }
+    CellModel* cellx=self.cells[indexPath.row];
     cell.imageVIew.image=[UIImage imageNamed:cellx.icon];
     cell.title.text=cellx.title;
     cell.price.text=cellx.price;
