@@ -9,12 +9,13 @@
 #import "ViewController.h"
 #import "CellModel.h"
 #import "TabelViewCell.h"
-@interface ViewController ()<UIScrollViewDelegate,UITableViewDataSource>
+#import "TableViewFooterView.h"
+@interface ViewController ()<UIScrollViewDelegate,UITableViewDataSource,TableViewFooterViewDelegate>
 @property(nonatomic,strong)UIPageControl* page;
 @property(nonatomic,strong)UIScrollView* scrollView;
 @property(strong,nonatomic)NSTimer* timer;
 @property(nonatomic,strong)UITableView* tableView;
-@property(nonatomic,strong)NSArray* cells;
+@property(nonatomic,strong)NSMutableArray* cells;
 @end
 
 @implementation ViewController
@@ -72,8 +73,11 @@
     self.page.currentPage=0;
     //启动时钟
     [self startTimer];
-    //创建tableView
-    [self tableView];
+    //创建tableViewfooterView
+    TableViewFooterView * footerView=[TableViewFooterView creatFooterView];
+    footerView.delegate=self;
+    self.tableView.tableFooterView=footerView;
+    
 }
 -(void)startTimer{
     self.timer=[NSTimer timerWithTimeInterval:3.0 target:self selector:@selector(changePage) userInfo:nil repeats:YES];
@@ -114,10 +118,25 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.cells.count;
 }
-
+//设置cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TabelViewCell* cell=[TabelViewCell cellWithTableView:tableView];
     cell.cellModel=self.cells[indexPath.row];
     return cell;
+}
+#pragma mark-tableViewFooterViewDelegate
+-(void)tableViewFooterViewDidClickedLoadMore:(TableViewFooterView *)footerView{
+    //设置新对象加入数组
+    NSString* icon=[NSString stringWithFormat:@"ad_0%d",arc4random_uniform(5)];
+    NSDictionary* dict=@{@"title": @"哈哈", @"icon":icon, @"price": @"100", @"buyCount": @"200"};
+    CellModel* cellModel=[CellModel cellModelWithDict:dict];
+    [self.cells addObject:cellModel];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //仅仅插入一行
+        NSIndexPath* path=[NSIndexPath indexPathForRow:(self.cells.count-1)inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationMiddle];
+        footerView.loadButton.hidden=NO;
+        footerView.loadView.hidden=YES;
+    });
 }
 @end

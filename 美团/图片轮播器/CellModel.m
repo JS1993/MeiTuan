@@ -19,7 +19,7 @@
 +(instancetype)cellModelWithDict:(NSDictionary*)dict{
     return [[self alloc]initWithDict:dict];
 }
-+(NSArray*)cellModels{
++(NSMutableArray*)cellModels{
     NSMutableArray* arrM=[NSMutableArray array];
     NSArray* arr=[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tgs" ofType:@"plist"]];
     for (NSDictionary* dic in arr ) {

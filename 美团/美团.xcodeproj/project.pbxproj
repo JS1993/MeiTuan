@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF51F8721CBBBCBD0048E8E7 /* TableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF51F8711CBBBCBD0048E8E7 /* TableViewFooterView.m */; };
+		CF51F8741CBBBCCA0048E8E7 /* TableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF51F8731CBBBCCA0048E8E7 /* TableViewFooterView.xib */; };
 		CF525D831CB516C10041BE55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF525D821CB516C10041BE55 /* main.m */; };
 		CF525D861CB516C10041BE55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF525D851CB516C10041BE55 /* AppDelegate.m */; };
 		CF525D891CB516C10041BE55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF525D881CB516C10041BE55 /* ViewController.m */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF51F8701CBBBCBD0048E8E7 /* TableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewFooterView.h; sourceTree = "<group>"; };
+		CF51F8711CBBBCBD0048E8E7 /* TableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewFooterView.m; sourceTree = "<group>"; };
+		CF51F8731CBBBCCA0048E8E7 /* TableViewFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewFooterView.xib; sourceTree = "<group>"; };
 		CF525D7E1CB516C10041BE55 /* 美团.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF525D821CB516C10041BE55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF525D841CB516C10041BE55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +143,9 @@
 				CF525D821CB516C10041BE55 /* main.m */,
 				CF763DC31CBA6A67009BD921 /* TabelViewCell.h */,
 				CF763DC41CBA6A67009BD921 /* TabelViewCell.m */,
+				CF51F8701CBBBCBD0048E8E7 /* TableViewFooterView.h */,
+				CF51F8711CBBBCBD0048E8E7 /* TableViewFooterView.m */,
+				CF51F8731CBBBCCA0048E8E7 /* TableViewFooterView.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 				CF525D911CB516C10041BE55 /* Assets.xcassets in Resources */,
 				CF525D8C1CB516C10041BE55 /* Main.storyboard in Resources */,
 				CF763DC21CBA6A4D009BD921 /* TabelViewCell.xib in Resources */,
+				CF51F8741CBBBCCA0048E8E7 /* TableViewFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +308,7 @@
 			files = (
 				CF525D891CB516C10041BE55 /* ViewController.m in Sources */,
 				CF525D8F1CB516C10041BE55 /* _____.xcdatamodeld in Sources */,
+				CF51F8721CBBBCBD0048E8E7 /* TableViewFooterView.m in Sources */,
 				CF763DC51CBA6A67009BD921 /* TabelViewCell.m in Sources */,
 				CF525D861CB516C10041BE55 /* AppDelegate.m in Sources */,
 				CF525D831CB516C10041BE55 /* main.m in Sources */,

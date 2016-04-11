@@ -14,5 +14,6 @@
 @property(copy,nonatomic)NSString* price;
 @property(copy,nonatomic)NSString* buyCount;
 
-+(NSArray*)cellModels;
++(NSMutableArray*)cellModels;
++(instancetype)cellModelWithDict:(NSDictionary*)dict;
 @end
